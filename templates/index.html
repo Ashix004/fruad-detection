@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Fraud Detection</title>
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <h1>Fraud Detection App</h1>
+
+    <div id="auth-section">
+      <h2 id="auth-title">Login</h2>
+
+      <input type="text" id="username" placeholder="Username" />
+      <input type="password" id="password" placeholder="Password" />
+
+      <button onclick="handleAuth()" id="auth-btn">Login</button>
+      <p id="auth-message"></p>
+
+      <p>
+        <a href="#" onclick="toggleAuthMode()"
+          >Don't have an account? Register</a
+        >
+      </p>
+    </div>
+
+    <div
+      id="welcome-section"
+      style="display: none; text-align: center; margin-bottom: 1rem"
+    >
+      Welcome, <span id="user-name-display" style="font-weight: bold"></span>!
+    </div>
+
+    <div id="predict-section" style="display: none">
+      <h2>Check Transaction</h2>
+      <input type="number" id="amount" placeholder="Amount" />
+      <input type="number" id="old_balance" placeholder="Old Balance" />
+      <input type="number" id="new_balance" placeholder="New Balance" />
+      <select id="type">
+        <option value="TRANSFER">TRANSFER</option>
+        <option value="CASH_OUT">CASH_OUT</option>
+        <option value="PAYMENT">PAYMENT</option>
+      </select>
+      <button onclick="predict()">Check Fraud</button>
+      <p id="result-message"></p>
+      <button
+        onclick="logout()"
+        style="margin-top: 20px; background-color: #dc3545"
+      >
+        Logout
+      </button>
+    </div>
+
+    <script src="/static/script.js"></script>
+  </body>
+</html>
